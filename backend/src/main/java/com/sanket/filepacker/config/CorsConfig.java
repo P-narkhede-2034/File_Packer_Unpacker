@@ -9,13 +9,15 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-    registry.addMapping("/api/**")
-    .allowedOriginPatterns(
-        "http://localhost:*",
-        "https://file-packer-unpacker.vercel.app",
-        "https://*.vercel.app"
-    )
-    .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-    .allowedHeaders("*");
+      registry.addMapping("/api/**")
+            .allowedOriginPatterns(
+                "http://localhost:*",
+                "https://file-packer-unpacker.vercel.app",
+                "https://*.vercel.app"
+            )
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .exposedHeaders("Content-Disposition")
+            .maxAge(3600);
     }
 }
