@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PackPanel from './components/PackPanel';
 import UnpackPanel from './components/UnpackPanel';
 
-const API_URL = import.meta.env.VITE_API_URL || ' https://file-packer-unpacker.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL || 'https://file-packer-unpacker.onrender.com';
 
 export default function App() {
   const [mode, setMode] = useState('pack'); // 'pack' | 'unpack'
